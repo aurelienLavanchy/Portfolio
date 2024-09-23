@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("./assets/fonts/IBMPlexSans-Medium.ttf") format("truetype");
+}
+
+:root {
+  --document-width: clamp(320px, 55%, 1200px);
+  --background-color: #f9f9f9;
+  --text-color: #444;
+  --link-color: #005694;
+  --details-background-color: #d4d1ec;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 1.125rem;
+  max-width: var(--document-width);
+  margin: auto;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+h1 {
+  margin-bottom: 3rem;
+  font-size: 2.8rem;
+}
+
+main {
+  padding-bottom: 2rem;
+}
+
+section {
+  border: 1px solid var(--text-color);
+  padding: 0 1rem 1.5rem 1rem;
+}
+
+u {
+  font-weight: 600;
+  text-decoration: underline dotted 1px;
+}
+
+p:not(h3 + p) {
+  max-width: 80ch;
+}
+
+details {
+  max-width: calc(80ch + 2rem);
+  margin: auto;
+  padding: 0.25rem 1rem;
+
+  &[open] {
+    background-color: var(--details-background-color);
+
+    summary::before {
+      transform: rotate(90deg);
+    }
+
+    p {
+      animation: slideDown 0.2s linear alternate;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &:hover {
+    background-color: var(--details-background-color);
+  }
+}
+
+summary {
+  cursor: pointer;
+  list-style-type: none;
+
+  &::before {
+    content: "▶";
+    margin-right: 0.75rem;
+    display: inline-block;
+    vertical-align: top;
+    transition: transform 0.2s ease;
+    position: relative;
+    top: -1px;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translatey(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0);
+  }
+}
+
+nav {
+  height: 3rem;
+  margin-bottom: 2rem;
+  padding: 0.25rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+a {
+  color: var(--link-color);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+}
+
+h1,
+h3,
+h3 + p {
+  text-align: center;
+}
+
+.articles-header {
+  text-align: center;
+  margin: 3rem 0;
+}

@@ -14,7 +14,60 @@
         <a href="./contact.html">Contact</a>
       </nav>
       <h1>Contact</h1>
-      <p>TODO</p>
+      <section class="contact">
+        <script src="./form.js" async></script>
+        <aside>
+          <h2>Coordonnées</h2>
+          <p>
+            <u>Email</u>:
+            <a href="mailto:aurelien.lavanchy@gmail.com"
+              >aurelien.lavanchy@gmail.com</a
+            >
+            <button
+              type="button"
+              aria-label="Copy e-mail to clipboard"
+              id="email"
+            >
+              <img src="./assets/images/copy.svg" alt="" />
+            </button>
+            <span id="email-copied" class="hidden">✔️</span>
+          </p>
+          <ul>
+            <li><a href="https://github.com/aurelienLavanchy">Github</a></li>
+            <li>
+              <a>LinkedIn</a> (<b><i>en construction</i></b
+              >)
+            </li>
+            <!-- <li>Discord ?</li> -->
+          </ul>
+        </aside>
+        <article>
+          <form id="contact-form">
+            <h2>Envoyer un message</h2>
+            <noscript
+              ><b class="noscript"
+                >This form will not work without javascript!</b
+              ></noscript
+            >
+            <label
+              ><b>Nom <sup>*</sup></b>
+              <input type="text" id="name" placeholder="John Doe" />
+              <span class="field-info name">Max. 200 caractères</span>
+            </label>
+            <label
+              ><b>Sujet <sup>*</sup></b>
+              <input type="text" id="subject" placeholder=". . ." />
+              <span class="field-info subject">Max. 150 caractères</span>
+            </label>
+            <label
+              ><b>Message <sup>*</sup></b>
+              <textarea id="message" placeholder="Hello world!"></textarea>
+              <span class="field-info message">Max. 500 caractères</span>
+            </label>
+            <button type="submit">Envoyer</button>
+          </form>
+        </article>
+      </section>
     </main>
   </body>
 </html>

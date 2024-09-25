@@ -200,7 +200,9 @@ object[type="application/pdf"] {
 }
 
 #message {
-  min-height: 48px;
+  min-height: 4rem;
+  max-height: 12rem;
+  resize: vertical;
 }
 
 #email {

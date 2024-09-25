@@ -112,16 +112,10 @@ messageForm.addEventListener("submit", (e) => {
 });
 
 emailButton.addEventListener("click", () => {
-  // copy email to clipboard
-  navigator.clipboard
-    .writeText("aurelien.lavanchy@gmailcom")
-    .then(() => {
-      emailCopied.classList.remove("hidden");
-      setTimeout(() => {
-        emailCopied.classList.add("hidden");
-      }, 2400);
-    })
-    .catch((err) => {
-      alert("Error: " + err);
-    });
+  navigator.clipboard.writeText("lavanchy.aurelien@gmailcom").then(() => {
+    emailCopied.classList.remove("hidden");
+    setTimeout(() => {
+      emailCopied.classList.add("hidden");
+    }, 2400);
+  });
 });

@@ -20,6 +20,7 @@ body {
   max-width: var(--document-width);
   margin: auto;
   font-family: "IBM Plex Sans", sans-serif;
+  min-height: 100vh;
 }
 
 h1 {
@@ -201,7 +202,7 @@ object[type="application/pdf"] {
 
 #message {
   min-height: 4rem;
-  max-height: 12rem;
+  max-height: 14.5rem;
   resize: vertical;
 }
 
@@ -239,4 +240,13 @@ h1 {
 
 .hidden {
   opacity: 0;
+}
+
+footer {
+  text-align: center;
+  font-size: 12pt;
+  position: absolute;
+  bottom: 0;
+  width: var(--document-width);
+  padding-bottom: 1rem;
 }

@@ -232,7 +232,8 @@ p.email {
   margin-bottom: 0;
 }
 
-.no-selection {
+.no-selection,
+h1 {
   user-select: none;
 }
 

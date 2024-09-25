@@ -66,7 +66,13 @@
             >
             <label
               ><b>Nom <sup>*</sup></b>
-              <input type="text" id="name" name="name" placeholder="John Doe" />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="John Doe"
+                maxlength="200"
+              />
               <span class="field-info name">Max. 200 caractères</span>
             </label>
             <label
@@ -76,6 +82,7 @@
                 id="subject"
                 name="subject"
                 placeholder=". . ."
+                maxlength="150"
               />
               <span class="field-info subject">Max. 150 caractères</span>
             </label>
@@ -85,6 +92,7 @@
                 id="message"
                 name="message"
                 placeholder="Hello world!"
+                maxlength="500"
               ></textarea>
               <span class="field-info message">Max. 500 caractères</span>
             </label>

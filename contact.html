@@ -16,22 +16,28 @@
       <h1>Contact</h1>
       <section class="contact">
         <script src="./form.js" async></script>
-        <aside>
+        <aside class="no-selection">
           <h2>Coordonnées</h2>
-          <p>
+          <p class="email">
             <u>Email</u>:
             <a href="mailto:aurelien.lavanchy@gmail.com"
               >aurelien.lavanchy@gmail.com</a
             >
-            <button
-              type="button"
-              aria-label="Copy e-mail to clipboard"
-              id="email"
-            >
-              <img src="./assets/images/copy.svg" alt="" />
-            </button>
-            <span id="email-copied" class="hidden">✔️</span>
           </p>
+          <span>Copier :</span>
+          <button
+            type="button"
+            aria-label="Copy e-mail to clipboard"
+            id="email"
+          >
+            <img src="./assets/images/copy.svg" alt="" />
+          </button>
+          <img
+            src="./assets/images/check.svg"
+            alt=""
+            id="email-copied"
+            class="hidden"
+          />
           <ul>
             <li><a href="https://github.com/aurelienLavanchy">Github</a></li>
             <li>
@@ -43,7 +49,7 @@
         </aside>
         <article>
           <form id="contact-form">
-            <h2>Envoyer un message</h2>
+            <h2 class="no-selection">Envoyer un message</h2>
             <noscript
               ><b class="noscript"
                 >This form will not work without javascript!</b

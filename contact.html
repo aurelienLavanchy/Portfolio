@@ -48,7 +48,11 @@
           </ul>
         </aside>
         <article>
-          <form id="contact-form">
+          <form
+            id="contact-form"
+            action="https://formspree.io/f/xgvwjjav"
+            method="post"
+          >
             <h2 class="no-selection">Envoyer un message</h2>
             <noscript
               ><b class="noscript"
@@ -57,17 +61,26 @@
             >
             <label
               ><b>Nom <sup>*</sup></b>
-              <input type="text" id="name" placeholder="John Doe" />
+              <input type="text" id="name" name="name" placeholder="John Doe" />
               <span class="field-info name">Max. 200 caractères</span>
             </label>
             <label
               ><b>Sujet <sup>*</sup></b>
-              <input type="text" id="subject" placeholder=". . ." />
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder=". . ."
+              />
               <span class="field-info subject">Max. 150 caractères</span>
             </label>
             <label
               ><b>Message <sup>*</sup></b>
-              <textarea id="message" placeholder="Hello world!"></textarea>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Hello world!"
+              ></textarea>
               <span class="field-info message">Max. 500 caractères</span>
             </label>
             <button type="submit">Envoyer</button>

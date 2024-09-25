@@ -245,7 +245,8 @@ h1 {
 footer {
   text-align: center;
   font-size: 12pt;
-  position: absolute;
+  position: fixed;
+  background-color: var(--background-color);
   bottom: 0;
   width: var(--document-width);
   padding-bottom: 1rem;

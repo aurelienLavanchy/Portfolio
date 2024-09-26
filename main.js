@@ -46,7 +46,7 @@ async function sendData(name, subject, message) {
   formData.append("message", message);
 
   try {
-    const response = await fetch("https://formspree.io/f/xgvwjjav", {
+    await fetch("https://usebasin.com/f/75000cad16f9", {
       method: "POST",
       body: formData,
     });

@@ -6,6 +6,7 @@ const messageFieldLimit = 500;
 const messageForm = document.querySelector("#contact-form");
 const emailButton = document.querySelector("#email");
 const emailCopied = document.querySelector("#email-copied");
+const emailSentMessage = document.querySelector("#message-sent");
 
 // Logic
 function checkFieldLimit(field, limit) {
@@ -37,17 +38,41 @@ function checkForErrors(field, fieldCheck, limit) {
   }
 }
 
+async function sendData(name, subject, message) {
+  const formData = new FormData();
+
+  formData.append("name", name);
+  formData.append("subject", subject);
+  formData.append("message", message);
+
+  try {
+    const response = await fetch("https://formspree.io/f/xgvwjjav", {
+      method: "POST",
+      body: formData,
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+function resetForm() {
+  messageForm.reset();
+}
+
 function handleSubmit() {
   const nameField = {
     content: document.querySelector("#name").value.length,
+    textContent: document.querySelector("#name").value,
     limit: nameFieldLimit,
   };
   const subjectField = {
     content: document.querySelector("#subject").value.length,
+    textContent: document.querySelector("#subject").value,
     limit: subjectFieldLimit,
   };
   const messageField = {
     content: document.querySelector("#message").value.length,
+    textContent: document.querySelector("#message").value,
     limit: messageFieldLimit,
   };
 
@@ -104,10 +129,30 @@ function handleSubmit() {
   for (const item of fields) {
     checkForErrors(item.field, item.fieldCheck, item.limit);
   }
+
+  const allChecksPassed =
+    !nameFieldCheckFailed &&
+    !subjectFieldCheckFailed &&
+    !messageFieldCheckFailed;
+
+  if (allChecksPassed) {
+    sendData(
+      nameField.textContent,
+      subjectField.textContent,
+      messageField.textContent
+    );
+    resetForm();
+    emailSentMessage.classList.remove("hidden");
+    emailSentMessage.classList.add("shown");
+    setTimeout(() => {
+      emailSentMessage.classList.remove("shown");
+      emailSentMessage.classList.add("hidden");
+    }, 2400);
+  }
 }
 
 messageForm.addEventListener("submit", (e) => {
-  /* e.preventDefault(); */
+  e.preventDefault();
   handleSubmit();
 });
 

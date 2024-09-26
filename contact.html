@@ -20,7 +20,7 @@
       </nav>
       <h1>Contact</h1>
       <section class="contact">
-        <script src="./form.js" async></script>
+        <script src="./main.js" async></script>
         <aside class="no-selection">
           <h2>Coordonnées</h2>
           <p class="email">
@@ -53,11 +53,7 @@
           </ul>
         </aside>
         <article>
-          <form
-            id="contact-form"
-            action="https://formspree.io/f/xgvwjjav"
-            method="post"
-          >
+          <form id="contact-form">
             <h2 class="no-selection">Envoyer un message</h2>
             <noscript
               ><b class="noscript"
@@ -85,7 +81,7 @@
                 name="subject"
                 placeholder=". . ."
                 maxlength="150"
-                minlength="8"
+                minlength="6"
                 required
               />
               <span class="field-info subject">Max. 150 caractères</span>
@@ -103,6 +99,9 @@
               <span class="field-info message">Max. 500 caractères</span>
             </label>
             <button type="submit">Envoyer</button>
+            <div id="message-sent" class="no-selection hidden">
+              Message envoyé !
+            </div>
           </form>
         </article>
       </section>

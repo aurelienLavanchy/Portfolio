@@ -51,7 +51,17 @@ async function sendData(name, subject, message) {
       body: formData,
     });
   } catch (error) {
-    console.error(error);
+    emailSentMessage.classList.remove("hidden");
+    emailSentMessage.classList.add("shown");
+    emailSentMessage.classList.add("error");
+    emailSentMessage.textContent = "Une erreur est survenue...";
+
+    setTimeout(() => {
+      emailSentMessage.classList.remove("shown");
+      emailSentMessage.classList.remove("error");
+      emailSentMessage.classList.add("hidden");
+      emailSentMessage.textContent = "Message envoyé !";
+    }, 4000);
   }
 }
 

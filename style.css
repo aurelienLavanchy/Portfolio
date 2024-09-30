@@ -155,19 +155,17 @@ object[type="application/pdf"] {
     color: var(--red);
   }
 
-  aside {
-    ul {
-      list-style-type: none;
-      padding: 0;
-      margin-top: 32px;
-    }
+  aside ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 32px;
   }
 
   h2 {
     text-align: center;
   }
 
-  article form {
+  form {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -195,7 +193,7 @@ object[type="application/pdf"] {
 }
 
 .field-info {
-  font-size: 0.875rem;
+  font-size: 10.5pt;
 }
 
 .error {
